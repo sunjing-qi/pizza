@@ -14,12 +14,39 @@ export default new Router({
       component: Home
     },
     {
+      path: '/menu',
+      name: 'menu',
+      // 懒加载
+      component: () => import('./views/Menu.vue')
+    },
+    {
+      path: '/manage',
+      name: 'manage',
+      // 懒加载
+      component: () => import('./views/Manage.vue')
+    },
+    {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      // 懒加载
+      component: () => import('./views/About.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      // 懒加载
+      component: () => import('./views/Login.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      // 懒加载
+      component: () => import('./views/Register.vue')
+    },
+    {
+      // 如果在访问路径时没找到，就会走这个
+      path: "*",
+      redirect: "/"
     }
   ]
 })
