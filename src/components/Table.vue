@@ -62,6 +62,9 @@ export default {
   float: right;
   width: 400px;
 }
+h1 {
+  color: #6c757d;
+}
 table {
   border-collapse: collapse;
 }
